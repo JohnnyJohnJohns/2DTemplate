@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed, maxSpeed, jumpForce;
     [SerializeField] private Collider2D groundCheck;
     [SerializeField] private LayerMask groundLayers;
+    [SerializeField] private bool cancelJumpEnabled;
 
     private float moveDir;
     private Rigidbody2D myRB;
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var moveAxis = Vector3.right * moveDir;
 
-        if (-maxSpeed < myRB.velocity.x && myRB.velocity.x < maxSpeed)
+        if (Mathf.Abs(myRB.velocity.x) < maxSpeed)
         {
             myRB.AddForce(moveAxis * moveSpeed, ForceMode2D.Force);
         }
@@ -48,8 +49,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canJump)
         {
-            myRB.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
-            canJump = false;
+            if (context.started)
+            {
+                myRB.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+                canJump = false;
+            }
+        }
+
+        if (context.canceled && cancelJumpEnabled)
+        {
+            myRB.velocity = new Vector2(myRB.velocity.x, 0f);
         }
     }
 }

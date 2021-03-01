@@ -92,6 +92,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  cancelJumpEnabled: 1
 --- !u!114 &7269364824449460865
 MonoBehaviour:
   m_ObjectHideFlags: 0
