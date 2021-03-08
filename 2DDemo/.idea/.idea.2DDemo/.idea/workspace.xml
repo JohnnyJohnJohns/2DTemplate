@@ -23,8 +23,8 @@
       <option value="$PROJECT_DIR$/Assets/AIPatrol.cs" />
       <option value="$PROJECT_DIR$/Assets/PlayerCombat.cs" />
       <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/BulletMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/FireBullets.cs" />
+      <option value="$PROJECT_DIR$/Assets/BulletMovement.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1opkVX338YDwfE42XSWOgMxKz2v" />
@@ -79,7 +79,7 @@
       <updated>1613990946003</updated>
       <workItem from="1613990963529" duration="2614000" />
       <workItem from="1614596836836" duration="1314000" />
-      <workItem from="1615198924706" duration="6180000" />
+      <workItem from="1615198924706" duration="6539000" />
     </task>
     <servers />
   </component>
